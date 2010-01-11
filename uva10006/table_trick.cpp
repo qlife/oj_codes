@@ -1,6 +1,7 @@
 // AC 2010/01/11 
 // Now the numbers of testcases is huge and so I use this evil trick.
 // My "Normal" implementation recived TLE :-(
+// Checkout wikipedia for Carmachael Numbers.
 #include<cstdio>
 #include<set>
 
