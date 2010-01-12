@@ -1,3 +1,6 @@
+// AC 2010/01/12
+// Max - Sum Interval problem.
+// I'd tried this problem two years ago...
 #include<cstdio>
 using namespace std;
 
@@ -56,8 +59,6 @@ int main()
             printf("Route %d has no nice parts\n",routeNo);
         else
             printf("The nicest part of route %d is between stops %d and %d\n",routeNo,maxBegin+1,maxEnd+1);
-
-
     }
     return 0;
 }
