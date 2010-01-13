@@ -59,6 +59,13 @@ int main()
             printf("Route %d has no nice parts\n",routeNo);
         else
             printf("The nicest part of route %d is between stops %d and %d\n",routeNo,maxBegin+1,maxEnd+1);
+
+        // why (I) have to add additional 1 to maxBegin and maxEnd?
+        // Because 
+        //  j           0   1   2   3   4   5  6  ...
+        //  BusStop  1    2   3   4   5   6  7   8 ...
+        //  begin    0    1   2   3   4   5  6   7
+        //  end      ...
     }
     return 0;
 }
