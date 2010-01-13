@@ -7,7 +7,7 @@ int main()
     while (2 == scanf("%ld %d",&n,&m))
     {
         unsigned long modulo = 1;
-        for (int j = 1 ; j < m + 1 ; ++j)
+        for (int j = 1 ; j < m  ; ++j)
         {
             modulo = modulo | (1 << j);
         }
