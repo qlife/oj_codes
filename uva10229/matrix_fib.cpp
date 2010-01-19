@@ -45,7 +45,7 @@ int main()
 {
     unsigned long x,y,z,w;
     unsigned long n = 0;
-    for (n = 2000000000 ; n < 2000000008 ; ++n)
+    for (n = 1 ; n < 10 ; ++n)
     {
         matrix_fib(n,&x,&y,&z,&w);
         printf("Fib(%lu) = %lu\n",n,y);
