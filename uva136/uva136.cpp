@@ -20,13 +20,17 @@ int main()
     for (int i = 1 ; i < 1500 ; ++i)
     {
         int u2,u3,u5;
+        /* 每個已知的都乘5, 找到目前大於已知的 ugly number 中最小的數 */
         for (u5 = 0 ; u5 < i && (ugly[u5] * 5) <= ugly[i-1]; ++u5)
             ;
+        /* 每個已知的都乘3, 找到目前大於已知的 ugly number 中最小的數 */
         for (u3 = u5 ; u3 < i && (ugly[u3] * 3) <= ugly[i-1]; ++u3)
             ;
+        /* 每個已知的都乘2, 找到目前大於已知的 ugly number 中最小的數 */
         for (u2 = u3 ; u2 < i && (ugly[u2] * 2) <= ugly[i-1]; ++u2)
             ;
 
+        /* 三者中最小者為新發現的最小的 ugly number */
         ugly[i] = min3(2 * ugly[u2] , 3 * ugly[u3] , 5 * ugly[u5]);
     }
 
