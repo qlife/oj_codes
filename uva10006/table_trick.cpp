@@ -3,7 +3,6 @@
 // My "Normal" implementation recived TLE :-(
 // Checkout wikipedia for Carmachael Numbers.
 #include<cstdio>
-#include<set>
 
 using namespace std;
 
