@@ -1,3 +1,14 @@
+// Acc 2010 Jul 29
+//
+// It's tricky. Consider the following situtations.
+//  a) A blank line in inputs.
+//  b) Last line of ouput isn't blank line.
+//  c) When there are two or more characters in the same frequency,
+//     the one with highter ASCII code goes first.
+//
+//  Finally , there WILL be some characters in input out of the range [32,127].
+//
+
 #include<cstdio>
 #include<cstdlib>
 #include<cstring>
@@ -32,17 +43,15 @@ cmpinfo(const void* p1, const void* p2)
 int main()
 {
     char buf[1024];
-    bool first_line = true;
+    int num_testcase = 0;
 
-    while(cin.getline(buf,1024) && *buf)
+    while(gets(buf))
     {
-        if (first_line)
-            first_line = false;
-        else
+        num_testcase ++;
+        if (num_testcase > 1)
             printf("\n");
-
-        info count[128];
-        for (int i = 0 ; i < 128 ; ++i)
+        info count[256];
+        for (int i = 0 ; i < 256; ++i)
         {
             count[i].n = 0;
             count[i].c = (unsigned char) i;
@@ -52,13 +61,14 @@ int main()
         for (int i = 0 ; i < len ; ++i)
             count[buf[i]].n += 1;
 
-        qsort(count,128,sizeof(info),cmpinfo);
+        qsort(count,256,sizeof(info),cmpinfo);
 
-        for (int j = 0 ; j < 128 ; ++j)
+        for (int j = 0 ; j < 256; ++j)
         {
-            if (0 != count[j].n)
+            if (0 != count[j].n && (count[j].c > 31 || count[j].c < 128))
                 printf("%d %d\n",count[j].c,count[j].n);
         }
+
     }
     return 0;
 }
